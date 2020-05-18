@@ -13,7 +13,17 @@ This is client repo. checkout server repo of the project: [Server Repo](https://
    
 Here are some Screenshots of the Ecommerce App:
 
+## User functionalities:
+* Log In / Sign Up
+* Add or remove products from cart.
+* Make Payments
+* See user dashboard
 
+## User functionalities:
+* Log In
+* Add new products and categories in the cart.
+* Update or remove products 
+* See admin dashbosrd (Orders made by users and process them)
 
 
 ## Tech Stack:
@@ -21,8 +31,6 @@ Here are some Screenshots of the Ecommerce App:
 * React.Js
 * Express.JS
 * MongoDB
-
-
 
 
 ## Project Setup:
