@@ -10,7 +10,9 @@ This is client repo. checkout server repo of the project: [Server Repo](https://
 
 ## Live Demonstration:
    The E-commerce demo can be [viewed online here](https://thetshirtapp.herokuapp.com/).
+   
    Test user: E-mail: a@user.com, password: 12345
+   
    Payment details: Card Number: 2223000048400011	Exp.Date: 12/21
    
 Here are some Screenshots of the Ecommerce App:
