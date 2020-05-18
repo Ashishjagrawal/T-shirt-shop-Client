@@ -8,12 +8,19 @@ This also have an admin panel/dashboard where admin can create product categorie
 
 This is client repo. checkout server repo of the project: [Server Repo](https://github.com/Ashishjagrawal/T-shirt-shop-Server)
 
+## Live Demonstration:
+   The E-commerce demo can be [viewed online here](https://thetshirtapp.herokuapp.com/).
+   
+Here are some Screenshots of the Ecommerce App:
 
 
 
 
-
-
+## Tech Stack:
+* Node.Js
+* React.Js
+* Express.JS
+* MongoDB
 
 
 
