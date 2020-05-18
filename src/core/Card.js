@@ -3,16 +3,16 @@ import ImageHelper from "./helper/ImageHelper";
 import { Redirect } from "react-router-dom";
 import { addItemToCart, removeItemFromCart } from "./helper/cartHelper";
 
+//Bootstrap Cards for showing Products in the store
 const Card = ({
   product,
   addtoCart = true,
   removeFromCart = false,
   setReload = f => f,
-  //   function(f){return f}
   reload = undefined
 }) => {
   const [redirect, setRedirect] = useState(false);
-  // const [count, setCount] = useState(product.count);
+  const [count, setCount] = useState(product.count);
 
   const cartTitle = product ? product.name : "A photo from pexels";
   const cartDescrption = product ? product.description : "Default description";
@@ -28,6 +28,8 @@ const Card = ({
     }
   };
 
+  //Add to cart button on the Card
+
   const showAddToCart = addtoCart => {
     return (
       addtoCart && (
@@ -40,6 +42,8 @@ const Card = ({
       )
     );
   };
+
+  //Or showing remove from cart button
 
   const showRemoveFromCart = removeFromCart => {
     return (
@@ -62,7 +66,7 @@ const Card = ({
       <div className="card-body">
         {getARedirect(redirect)}
         <ImageHelper product={product} />
-        <p className="lead bg-success font-weight-normal text-wrap">
+        <p className="lead bg-dark font-weight-normal text-wrap">
           {cartDescrption}
         </p>
         <p className="btn btn-success rounded  btn-sm px-4">$ {cartPrice}</p>

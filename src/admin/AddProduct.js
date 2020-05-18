@@ -4,8 +4,12 @@ import { Link } from "react-router-dom";
 import { getCategories, createaProduct } from "./helper/adminapicall";
 import { isAutheticated } from "../auth/helper/index";
 
+//Adding new products in the available categories
+
 const AddProduct = () => {
   const { user, token } = isAutheticated();
+
+  //Fields to fill before adding new product
 
   const [values, setValues] = useState({
     name: "",
@@ -36,6 +40,8 @@ const AddProduct = () => {
     formData
   } = values;
 
+  //loading form data
+
   const preload = () => {
     getCategories().then(data => {
       //console.log(data);
@@ -50,6 +56,8 @@ const AddProduct = () => {
   useEffect(() => {
     preload();
   }, []);
+
+  //Submit the form data
 
   const onSubmit = event => {
     event.preventDefault();
@@ -77,6 +85,8 @@ const AddProduct = () => {
     formData.set(name, value);
     setValues({ ...values, [name]: value });
   };
+
+  //Product creation success message
 
   const successMessage = () => (
     <div
@@ -152,8 +162,9 @@ const AddProduct = () => {
           value={stock}
         />
       </div>
-
+      
       <button
+        //Submit button
         type="submit"
         onClick={onSubmit}
         className="btn btn-outline-success mb-3"

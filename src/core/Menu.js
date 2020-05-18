@@ -2,17 +2,21 @@ import React, { Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { signout, isAutheticated } from "../auth/helper";
 
+//Changing color of the current oprning tab
+
 const currentTab = (history, path) => {
   if (history.location.pathname === path) {
-    return { color: "#2ecc72" };
+    return { color: "#000000" };
   } else {
     return { color: "#FFFFFF" };
   }
 };
 
+// menu Bar
+
 const Menu = ({ history }) => (
-  <div>
-    <ul className="nav nav-tabs bg-dark">
+  <div className="float-right">
+    <ul className="nav nav-tabs bg-primary">
       <li className="nav-item">
         <Link style={currentTab(history, "/")} className="nav-link" to="/">
           Home
@@ -28,6 +32,7 @@ const Menu = ({ history }) => (
         </Link>
       </li>
       {isAutheticated() && isAutheticated().user.role === 0 && (
+        //User Dashboard
         <li className="nav-item">
           <Link
             style={currentTab(history, "/user/dashboard")}
@@ -39,6 +44,7 @@ const Menu = ({ history }) => (
         </li>
       )}
       {isAutheticated() && isAutheticated().user.role === 1 && (
+        //admin dashboard
         <li className="nav-item">
           <Link
             style={currentTab(history, "/admin/dashboard")}

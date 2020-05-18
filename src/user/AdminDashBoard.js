@@ -3,10 +3,14 @@ import Base from "../core/Base";
 import { isAutheticated } from "../auth/helper/index";
 import { Link } from "react-router-dom";
 
+//Admin dashboard
+
 const AdminDashBoard = () => {
   const {
     user: { name, email }
   } = isAutheticated();
+
+  // Left side of the admin dashboard page
 
   const adminLeftSide = () => {
     return (
@@ -43,6 +47,9 @@ const AdminDashBoard = () => {
     );
   };
 
+
+  //Right side of the Admin Dashboard
+
   const adminRightSide = () => {
     return (
       <div className="card mb-4">
@@ -63,6 +70,7 @@ const AdminDashBoard = () => {
     );
   };
   return (
+        //Title of the page and description
     <Base
       title="Welcome to admin area"
       description="Manage all of your products here"

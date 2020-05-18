@@ -1,3 +1,5 @@
+//Adding products to cart
+
 export const addItemToCart = (item, next) => {
   let cart = [];
   if (typeof window !== undefined) {
@@ -13,6 +15,8 @@ export const addItemToCart = (item, next) => {
   }
 };
 
+//loading cart page
+
 export const loadCart = () => {
   if (typeof window !== undefined) {
     if (localStorage.getItem("cart")) {
@@ -20,6 +24,8 @@ export const loadCart = () => {
     }
   }
 };
+
+//remove items from cart
 
 export const removeItemFromCart = productId => {
   let cart = [];
@@ -37,6 +43,8 @@ export const removeItemFromCart = productId => {
   }
   return cart;
 };
+
+//Empty Cart
 
 export const cartEmpty = next => {
   if (typeof window !== undefined) {

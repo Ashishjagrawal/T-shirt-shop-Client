@@ -8,6 +8,8 @@ import {
 } from "./helper/adminapicall";
 import { isAutheticated } from "../auth/helper/index";
 
+//Updation of products
+
 const UpdateProduct = ({ match }) => {
   const { user, token } = isAutheticated();
 
@@ -32,17 +34,18 @@ const UpdateProduct = ({ match }) => {
     price,
     stock,
     categories,
-    // category,
-    // loading,
-    // error,
+    category,
+    loading,
+    error,
     createdProduct,
-    // getaRedirect,
+    getaRedirect,
     formData
   } = values;
 
+  //loading products 
+
   const preload = productId => {
     getProduct(productId).then(data => {
-      //console.log(data);
       if (data.error) {
         setValues({ ...values, error: data.error });
       } else {
@@ -59,6 +62,8 @@ const UpdateProduct = ({ match }) => {
       }
     });
   };
+
+  //loading categories
 
   const preloadCategories = () => {
     getCategories().then(data => {
@@ -77,7 +82,7 @@ const UpdateProduct = ({ match }) => {
     preload(match.params.productId);
   }, []);
 
-  //TODO: work on it
+  //Submit action
   const onSubmit = event => {
     event.preventDefault();
     setValues({ ...values, error: "", loading: true });
@@ -108,6 +113,7 @@ const UpdateProduct = ({ match }) => {
     setValues({ ...values, [name]: value });
   };
 
+  //success message
   const successMessage = () => (
     <div
       className="alert alert-success mt-3"
@@ -116,6 +122,8 @@ const UpdateProduct = ({ match }) => {
       <h4>{createdProduct} updated successfully</h4>
     </div>
   );
+
+  //from for creating new products
 
   const createProductForm = () => (
     <form>

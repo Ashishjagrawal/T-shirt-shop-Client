@@ -4,12 +4,16 @@ import { isAutheticated } from "../auth/helper";
 import { Link } from "react-router-dom";
 import { createCategory } from "./helper/adminapicall";
 
+//Adding new item categories in the shop by Admin
+
 const AddCategory = () => {
   const [name, setName] = useState("");
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
 
   const { user, token } = isAutheticated();
+
+  //Back button to go back to the admin dashboard
 
   const goBack = () => (
     <div className="mt-5">
@@ -41,17 +45,23 @@ const AddCategory = () => {
     });
   };
 
+  //Showing Success Message to admin
+
   const successMessage = () => {
     if (success) {
       return <h4 className="text-success">Category created successfully</h4>;
     }
   };
 
+  //Category creation failed message
+
   const warningMessage = () => {
     if (error) {
       return <h4 className="text-success">Failed to create category</h4>;
     }
   };
+
+  //Form for creating new categories in the shop
 
   const myCategoryForm = () => (
     <form>
@@ -75,6 +85,7 @@ const AddCategory = () => {
 
   return (
     <Base
+    //page title
       title="Create a category here"
       description="Add a new category for new tshirts"
       className="container bg-info p-4"

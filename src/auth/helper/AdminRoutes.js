@@ -2,6 +2,8 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { isAutheticated } from "./index";
 
+//Admin Route
+
 const AdminRoute = ({ component: Component, ...rest }) => {
   return (
     <Route

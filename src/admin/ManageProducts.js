@@ -5,10 +5,14 @@ import { Link } from "react-router-dom";
 import { isAutheticated } from "../auth/helper";
 import { getProducts, deleteProduct } from "./helper/adminapicall";
 
+//Managing already available products in the shop
+
 const ManageProducts = () => {
   const [products, setProducts] = useState([]);
 
   const { user, token } = isAutheticated();
+
+  //loading the products
 
   const preload = () => {
     getProducts().then(data => {
@@ -23,6 +27,8 @@ const ManageProducts = () => {
   useEffect(() => {
     preload();
   }, []);
+
+  //Deletion of products
 
   const deleteThisProduct = productId => {
     deleteProduct(productId, user._id, token).then(data => {

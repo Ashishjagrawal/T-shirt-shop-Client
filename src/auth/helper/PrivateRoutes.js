@@ -2,6 +2,8 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { isAutheticated } from "./index";
 
+//private routes to show only after checking authentication
+
 const PrivateRoute = ({ component: Component, ...rest }) => {
   return (
     <Route

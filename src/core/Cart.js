@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../styles.css";
-// import { API } from "../backend";
 import Base from "./Base";
 import Card from "./Card";
 import { loadCart } from "./helper/cartHelper";
 import Paymentb from "./Paymentb";
 
+//cart page
 const Cart = () => {
   const [products, setProducts] = useState([]);
   const [reload, setReload] = useState(false);
@@ -13,6 +13,8 @@ const Cart = () => {
   useEffect(() => {
     setProducts(loadCart());
   }, [reload]);
+
+  //Loading products in the cart
 
   const loadAllProducts = products => {
     return (
@@ -31,16 +33,18 @@ const Cart = () => {
       </div>
     );
   };
-  // const loadCheckout = () => {
-  //   return (
-  //     <div>
-  //       <h2>Checkout Section</h2>
-  //     </div>
-  //   );
-  // };
-  // I'm commenting this because currently I can't see what its use
-  // In future if you want or get error then uncomment this okay
 
+
+  //Checkout Section/Payment
+
+  const loadCheckout = () => {
+    return (
+      <div>
+        <h2>Checkout Section</h2>
+      </div>
+    );
+  };
+  
   return (
     <Base title="Cart Page" description="Ready to checkout">
       <div className="row text-center">

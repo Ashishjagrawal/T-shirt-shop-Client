@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { cartEmpty } from "./helper/cartHelper";
-// import { Link } from "react-router-dom";
+
 import { getmeToken, processPayment } from "./helper/paymentbhelper";
 import { createOrder } from "./helper/orderHelper";
 import { isAutheticated } from "../auth/helper";
 
+
 import DropIn from "braintree-web-drop-in-react";
+
+//Processing Payment
 
 const Paymentb = ({ products, setReload = f => f, reload = undefined }) => {
   const [info, setInfo] = useState({
@@ -16,12 +19,13 @@ const Paymentb = ({ products, setReload = f => f, reload = undefined }) => {
     instance: {}
   });
 
+  //getting UserId and token(generated). 
+
   const userId = isAutheticated() && isAutheticated().user._id;
   const token = isAutheticated() && isAutheticated().token;
 
   const getToken = (userId, token) => {
     getmeToken(userId, token).then(info => {
-      // console.log("INFORMATION", info);
       if (info.error) {
         setInfo({ ...info, error: info.error });
       } else {
@@ -30,6 +34,8 @@ const Paymentb = ({ products, setReload = f => f, reload = undefined }) => {
       }
     });
   };
+
+  //Showing Payment Fields from braintree
 
   const showbtdropIn = () => {
     return (
@@ -55,16 +61,21 @@ const Paymentb = ({ products, setReload = f => f, reload = undefined }) => {
     getToken(userId, token);
   }, []);
 
+//Sending Payment request to the Braintree server
+
   const onPurchase = () => {
     setInfo({ loading: true });
     let nonce;
-    // let getNonce = 
+    let getNonce = 
     info.instance.requestPaymentMethod().then(data => {
       nonce = data.nonce;
       const paymentData = {
         paymentMethodNonce: nonce,
         amount: getAmount()
       };
+
+      //Payment Status Failed for Success
+
       processPayment(userId, token, paymentData)
         .then(response => {
           setInfo({ ...info, success: response.success, loading: false });
@@ -88,6 +99,8 @@ const Paymentb = ({ products, setReload = f => f, reload = undefined }) => {
     });
   };
 
+  //Calculating Total Amount
+
   const getAmount = () => {
     let amount = 0;
     products.map(p => {
@@ -95,6 +108,8 @@ const Paymentb = ({ products, setReload = f => f, reload = undefined }) => {
     });
     return amount;
   };
+
+  // Show Final Cart Amount
 
   return (
     <div>

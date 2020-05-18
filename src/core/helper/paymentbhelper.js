@@ -1,5 +1,7 @@
 import { API } from "../../backend";
 
+//Get the Token(generated).
+
 export const getmeToken = (userId, token) => {
   return fetch(`${API}payment/gettoken/${userId}`, {
     method: "GET",
@@ -14,6 +16,8 @@ export const getmeToken = (userId, token) => {
     })
     .catch(err => console.log(err));
 };
+
+//Processing Payment (Braintree).
 
 export const processPayment = (userId, token, paymentInfo) => {
   return fetch(`${API}/payment/braintree/${userId}`, {

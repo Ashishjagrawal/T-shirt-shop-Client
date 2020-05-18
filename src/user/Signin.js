@@ -4,6 +4,8 @@ import { Redirect } from "react-router-dom";
 
 import { signin, authenticate, isAutheticated } from "../auth/helper";
 
+//Sign in Page
+
 const Signin = () => {
   const [values, setValues] = useState({
     email: "",
@@ -39,6 +41,9 @@ const Signin = () => {
       .catch(console.log("signin request failed"));
   };
 
+
+  //Redirecting to USER OR ADMIN dashboard according to the authentication
+
   const performRedirect = () => {
     if (didRedirect) {
       if (user && user.role === 1) {
@@ -52,6 +57,8 @@ const Signin = () => {
     }
   };
 
+  //Show Loading message 
+
   const loadingMessage = () => {
     return (
       loading && (
@@ -62,6 +69,7 @@ const Signin = () => {
     );
   };
 
+  // Show Error Message
   const errorMessage = () => {
     return (
       <div className="row">
@@ -77,6 +85,9 @@ const Signin = () => {
     );
   };
 
+
+  // Form for Signing in 
+  
   const signInForm = () => {
     return (
       <div className="row">

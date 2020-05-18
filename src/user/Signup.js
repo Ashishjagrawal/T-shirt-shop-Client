@@ -3,6 +3,7 @@ import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import { signup } from "../auth/helper";
 
+//SignUp page Content
 const Signup = () => {
   const [values, setValues] = useState({
     name: "",
@@ -38,6 +39,8 @@ const Signup = () => {
       })
       .catch(console.log("Error in signup"));
   };
+
+  // Form for SignUp 
 
   const signUpForm = () => {
     return (
