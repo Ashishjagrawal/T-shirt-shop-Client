@@ -28,11 +28,11 @@ const AddProduct = () => {
     price,
     stock,
     categories,
-    category,
-    loading,
-    error,
+    // category,
+    // loading,
+    // error,
     createdProduct,
-    getaRedirect,
+    // getaRedirect,
     formData
   } = values;
 

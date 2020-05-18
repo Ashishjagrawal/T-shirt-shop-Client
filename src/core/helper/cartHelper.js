@@ -29,8 +29,9 @@ export const removeItemFromCart = productId => {
     }
     cart.map((product, i) => {
       if (product._id === productId) {
-        cart.splice(i, 1);
+        return cart.splice(i, 1);
       }
+      return true;
     });
     localStorage.setItem("cart", JSON.stringify(cart));
   }

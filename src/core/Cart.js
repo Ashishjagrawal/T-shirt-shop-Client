@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles.css";
-import { API } from "../backend";
+// import { API } from "../backend";
 import Base from "./Base";
 import Card from "./Card";
 import { loadCart } from "./helper/cartHelper";
@@ -31,13 +31,15 @@ const Cart = () => {
       </div>
     );
   };
-  const loadCheckout = () => {
-    return (
-      <div>
-        <h2>Checkout Section</h2>
-      </div>
-    );
-  };
+  // const loadCheckout = () => {
+  //   return (
+  //     <div>
+  //       <h2>Checkout Section</h2>
+  //     </div>
+  //   );
+  // };
+  // I'm commenting this because currently I can't see what its use
+  // In future if you want or get error then uncomment this okay
 
   return (
     <Base title="Cart Page" description="Ready to checkout">

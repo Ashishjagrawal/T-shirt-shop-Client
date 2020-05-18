@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles.css";
-import { API } from "../backend";
+// import { API } from "../backend";
 import Base from "./Base";
 import Card from "./Card";
 import { getProducts } from "./helper/coreapicalls";
@@ -8,7 +8,6 @@ import { getProducts } from "./helper/coreapicalls";
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(false);
-
   const loadAllProduct = () => {
     getProducts().then(data => {
       if (data.error) {
@@ -26,7 +25,12 @@ export default function Home() {
   return (
     <Base title="Home Page" description="Welcome to the Tshirt Store">
       <div className="row text-center">
-        <h1 className="text-white">All the Products:</h1>
+        {error ? (
+            <h1 className="text-white">Somthing went wrong. Please, refresh the page</h1>          
+          ): (
+            <h1 className="text-white">All the Products:</h1>
+
+          )}
         <div className="row">
           {products.map((product, index) => {
             return (

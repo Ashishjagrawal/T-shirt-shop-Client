@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { loadCart, cartEmpty } from "./helper/cartHelper";
-import { Link } from "react-router-dom";
+import { cartEmpty } from "./helper/cartHelper";
+// import { Link } from "react-router-dom";
 import { getmeToken, processPayment } from "./helper/paymentbhelper";
 import { createOrder } from "./helper/orderHelper";
 import { isAutheticated } from "../auth/helper";
@@ -58,7 +58,8 @@ const Paymentb = ({ products, setReload = f => f, reload = undefined }) => {
   const onPurchase = () => {
     setInfo({ loading: true });
     let nonce;
-    let getNonce = info.instance.requestPaymentMethod().then(data => {
+    // let getNonce = 
+    info.instance.requestPaymentMethod().then(data => {
       nonce = data.nonce;
       const paymentData = {
         paymentMethodNonce: nonce,
@@ -90,7 +91,7 @@ const Paymentb = ({ products, setReload = f => f, reload = undefined }) => {
   const getAmount = () => {
     let amount = 0;
     products.map(p => {
-      amount = amount + p.price;
+      return amount = amount + p.price;
     });
     return amount;
   };

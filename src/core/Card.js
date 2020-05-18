@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ImageHelper from "./helper/ImageHelper";
 import { Redirect } from "react-router-dom";
 import { addItemToCart, removeItemFromCart } from "./helper/cartHelper";
@@ -12,7 +12,7 @@ const Card = ({
   reload = undefined
 }) => {
   const [redirect, setRedirect] = useState(false);
-  const [count, setCount] = useState(product.count);
+  // const [count, setCount] = useState(product.count);
 
   const cartTitle = product ? product.name : "A photo from pexels";
   const cartDescrption = product ? product.description : "Default description";
