@@ -1,3 +1,42 @@
+## The T-shirt Store:
+
+### `Idea of the application`
+
+This is a sample application that demonstrates an E-commerce website using the MERN stack. The application loads products from MongoDB database and displays them. Users can add products in the cart, make payment and place order. User can also remove products from the shopping cart *separate paragraph*. 
+
+This also have an admin panel/dashboard where admin can create product categories, add products in any particular category, manage those product categories and update or remove products.
+
+This is client repo. checkout server repo of the project: [Server Repo](https://github.com/Ashishjagrawal/T-shirt-shop-Server)
+
+## Live Demonstration:
+   The E-commerce demo can be [viewed online here](https://thetshirtapp.herokuapp.com/).
+   
+Here are some Screenshots of the Ecommerce App:
+
+## User functionalities:
+* Log In / Sign Up
+* Add or remove products from cart.
+* Make Payments
+* See user dashboard
+
+## User functionalities:
+* Log In
+* Add new products and categories in the cart.
+* Update or remove products 
+* See admin dashbosrd (Orders made by users and process them)
+
+
+## Tech Stack:
+* Node.Js
+* React.Js
+* Express.JS
+* MongoDB
+
+
+
+
+
+## Project Setup:
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
