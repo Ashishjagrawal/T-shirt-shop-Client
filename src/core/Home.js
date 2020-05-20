@@ -28,13 +28,15 @@ export default function Home() {
   }, []);
 
   return (
+ 
     //Title and description of the page
-    <Base title="Home Page" description="Welcome to the Tshirt Store">
+    <Base title="" description="" >
+
       <div className="row text-center">
         {error ? (
             <h1 className="text-dark">Somthing went wrong. Please, refresh the page</h1>          
           ): (
-            <h1 className="text-dark">All the Products:</h1>
+            <h1 className="text-dark text-center">Amazing Products</h1>
 
           )}
         <div className="row">

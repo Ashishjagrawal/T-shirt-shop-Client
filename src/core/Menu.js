@@ -6,9 +6,9 @@ import { signout, isAutheticated } from "../auth/helper";
 
 const currentTab = (history, path) => {
   if (history.location.pathname === path) {
-    return { color: "#000000" };
+    return { color: " #18B606  " };
   } else {
-    return { color: "#FFFFFF" };
+    return { color: " #000000" };
   }
 };
 
@@ -16,7 +16,8 @@ const currentTab = (history, path) => {
 
 const Menu = ({ history }) => (
   <div>
-    <ul className="nav nav-tabs bg-success">
+      
+    <ul className="nav nav-tabs bg-light " >
       <li className="nav-item">
         <Link style={currentTab(history, "/")} className="nav-link" to="/">
           Home

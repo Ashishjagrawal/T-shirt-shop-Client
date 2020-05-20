@@ -4,7 +4,7 @@ import Base from "../core/Base";
 //User Dashboard
 const UserDashBoard = () => {
   return (
-    <Base title="UserDashBoard page">
+    <Base title="User DashBoard" description="">
       <h1>UserDashBoard</h1>
     </Base>
   );

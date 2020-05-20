@@ -14,8 +14,8 @@ const Card = ({
   const [redirect, setRedirect] = useState(false);
   const [count, setCount] = useState(product.count);
 
-  const cartTitle = product ? product.name : "A photo from pexels";
-  const cartDescrption = product ? product.description : "Default description";
+  const cartTitle = product ? product.name : "A photo ";
+  const cartDescrption = product ? product.description : "description";
   const cartPrice = product ? product.price : "DEFAULT";
 
   const addToCart = () => {
@@ -62,7 +62,7 @@ const Card = ({
   };
   return (
     <div className="card text-white bg-dark border border-info ">
-      <div className="card-header lead">{cartTitle}</div>
+      <div className="card-header lead font-weight-normal text-wrap">{cartTitle}</div>
       <div className="card-body">
         {getARedirect(redirect)}
         <ImageHelper product={product} />
